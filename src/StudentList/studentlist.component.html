@@ -1,0 +1,30 @@
+<div class="col-md-6">
+    <table HighLight [backgroundColor]="'gray'" class="table table-bordered" border="1">
+        <tr>
+            <th>Roll No</th>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>English Marks</th>
+            <th>Hindi Marks</th>
+            <th>Social Science Marks</th>
+            <th>Mathematics Marks</th>
+            <th>Total Marks</th>
+        </tr>
+        <ng-container *ngFor='let stud of students'>
+            <tr>
+            <td>{{stud.RollNo}}</td>
+            <td>{{stud.name}}</td>
+            <td>{{stud.gender}}</td>
+            <td [ngClass]="{'blue':stud.English<35}">{{stud.English}}</td>
+            <td [ngClass]="{'blue':stud.Hindi<35}">{{stud.Hindi}}</td>
+            <td [ngClass]="{'blue':stud.SocialScience<35}">{{stud.SocialScience}}</td>
+            <td [ngClass]="{'blue':stud.Maths<35}">{{stud.Maths}}</td>
+            <td [ngClass]="stud.SocialScience + stud.English + stud.Hindi + stud.Maths >130?{'green':true}:{'red':true}">{{stud.SocialScience + stud.English + stud.Hindi + stud.Maths}}</td>
+        </tr>
+    </ng-container>
+        <tr *ngIf="students.length==0">
+            <td colspan="4"> Students record not found</td>
+    
+        </tr>
+    </table>
+    </div>

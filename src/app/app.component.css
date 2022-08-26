@@ -1,0 +1,16 @@
+.card-container li {
+    list-style-type: none;
+    padding: .5em .5em .5em .5em;
+    text-align: left;
+  }
+  .card{
+    transition: 0.2s;
+    overflow:hidden;
+    width:20em;
+    word-wrap:break-word;
+}
+.card-text{
+    padding: .1em .1em .1em .1em;
+    background-color:#999;
+    word-wrap: break-word;
+}
